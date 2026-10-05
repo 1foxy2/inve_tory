@@ -7,9 +7,9 @@ license="${mod_license}"
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/inve-tory/"
 logoFile="inve_tory.png" #optional
-issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+issueTrackerURL="https://github.com/1foxy2/inve_tory/issues"
 authors="${mod_authors}"
 description='''${mod_description}'''
 
@@ -20,7 +20,7 @@ config="${mod_id}.mixins.json"
 links=[
     "modmenu.discord=https://discord.gg/GTYvTWfzxt"
 ]
-sources="https://github.com/1foxy2/cooksdelight"
+sources="https://github.com/1foxy2/inve_tory"
 
 [[dependencies.${mod_id}]]
     modId="neoforge"
