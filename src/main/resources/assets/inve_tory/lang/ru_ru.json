@@ -1,0 +1,21 @@
+{
+  "gui.inve_tory.open_slot": "Нажмите, чтобы открыть слот",
+  "gui.inve_tory.close_slot": "Нажмите, чтобы закрыть слот",
+  "gui.inve_tory.available_slots": "Доступно слотов: %s",
+  "inve_tory.configuration.add_toggle_button": "Кнопка смены режима",
+  "inve_tory.configuration.add_toggle_button.tooltip": "Если выбран кастомный пресет будет добавлять в инвентарь кнопку для переключения между выключением и включением слотов",
+  "inve_tory.configuration.preset": "Пресет",
+  "inve_tory.configuration.preset.tooltip": "В каком порядке будут открываться слоты",
+  "inve_tory.configuration.custom_preset": "Кастомный пресет",
+  "inve_tory.configuration.custom_preset.tooltip": "Порядок открытия для кастомного пресета",
+  "inve_tory.configuration.force_preset": "Принудительный пресет",
+  "inve_tory.configuration.force_preset.tooltip": "Будет использоваться пресет с сервера вместо клиентского",
+  "inve_tory.configuration.initial_slots": "Изначальные слоты",
+  "inve_tory.configuration.initial_slots.tooltip": "Изначальные слоты которые открыты у игрока",
+  "inve_tory.configuration.force_preset_type": "Тип принудительного пресета",
+  "inve_tory.configuration.force_preset_type.tooltip": "Какой пресет использовать если включён принудительный пресет",
+  "inve_tory.configuration.force_custom_preset": "Кастомный принудительный пресет",
+  "inve_tory.configuration.force_custom_preset.tooltip": "Порядок открытия для кастомного пресета",
+  "inve_tory.configuration.slots_per_armor_attribute": "Слоты за атрибут брони",
+  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Количество слотов которое даётся за единицу брони"
+}

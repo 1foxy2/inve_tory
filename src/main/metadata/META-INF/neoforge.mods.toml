@@ -8,13 +8,19 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
-#logoFile="examplemod.png" #optional
+logoFile="inve_tory.png" #optional
 issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
 authors="${mod_authors}"
 description='''${mod_description}'''
 
 [[mixins]]
 config="${mod_id}.mixins.json"
+
+[modproperties.modmenu]
+links=[
+    "modmenu.discord=https://discord.gg/GTYvTWfzxt"
+]
+sources="https://github.com/1foxy2/cooksdelight"
 
 [[dependencies.${mod_id}]]
     modId="neoforge"

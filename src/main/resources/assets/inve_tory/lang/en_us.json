@@ -1,0 +1,21 @@
+{
+  "gui.inve_tory.open_slot": "Click to open slot",
+  "gui.inve_tory.close_slot": "Click to close slot",
+  "gui.inve_tory.available_slots": "Available slots: %s",
+  "inve_tory.configuration.add_toggle_button": "Add toggle button",
+  "inve_tory.configuration.add_toggle_button.tooltip": "if custom preset is selected, will show button to toggle between enabling/disabling slot mode in inventory",
+  "inve_tory.configuration.preset": "Preset",
+  "inve_tory.configuration.preset.tooltip": "defines in which order will the slot open",
+  "inve_tory.configuration.custom_preset": "Custom preset",
+  "inve_tory.configuration.custom_preset.tooltip": "if custom preset is selected, this will be the order of slot unlocking",
+  "inve_tory.configuration.force_preset": "Force preset",
+  "inve_tory.configuration.force_preset.tooltip": "if enabled will use server's preset instead of client's one",
+  "inve_tory.configuration.initial_slots": "Initial slots",
+  "inve_tory.configuration.initial_slots.tooltip": "Number of initial unlocked slots",
+  "inve_tory.configuration.force_preset_type": "Force preset type",
+  "inve_tory.configuration.force_preset_type.tooltip": "defines in which order will the slot open",
+  "inve_tory.configuration.force_custom_preset": "Force custom preset",
+  "inve_tory.configuration.force_custom_preset.tooltip": "if custom preset is selected, this will be the order of slot unlocking",
+  "inve_tory.configuration.slots_per_armor_attribute": "Slots per armor attribute",
+  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Amount of slots given per armor attribute on the item"
+}
