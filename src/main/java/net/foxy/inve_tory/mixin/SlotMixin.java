@@ -24,4 +24,12 @@ public abstract class SlotMixin {
     private boolean disable(boolean original) {
         return original && !container.inve_tory$isDisabled(getSlotIndex());
     }
+
+    @ModifyReturnValue(
+            method = "mayPlace",
+            at = @At("RETURN")
+    )
+    private boolean disablePlace(boolean original) {
+        return original && !container.inve_tory$isDisabled(getSlotIndex());
+    }
 }

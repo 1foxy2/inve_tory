@@ -17,5 +17,9 @@
   "inve_tory.configuration.force_custom_preset": "Force custom preset",
   "inve_tory.configuration.force_custom_preset.tooltip": "if custom preset is selected, this will be the order of slot unlocking",
   "inve_tory.configuration.slots_per_armor_attribute": "Slots per armor attribute",
-  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Amount of slots given per armor attribute on the item"
+  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Amount of slots given per armor attribute on the item",
+  "commands.inve_tory.already_disabled": "Inve tory is already disabled for %s",
+  "commands.inve_tory.already_enabled": "Inve tory is already enabled for %s",
+  "commands.inve_tory.disabled": "Inve tory disabled for %s",
+  "commands.inve_tory.enabled": "Inve tory enabled for %s"
 }

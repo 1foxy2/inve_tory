@@ -17,5 +17,9 @@
   "inve_tory.configuration.force_custom_preset": "Кастомный принудительный пресет",
   "inve_tory.configuration.force_custom_preset.tooltip": "Порядок открытия для кастомного пресета",
   "inve_tory.configuration.slots_per_armor_attribute": "Слоты за атрибут брони",
-  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Количество слотов которое даётся за единицу брони"
+  "inve_tory.configuration.slots_per_armor_attribute.tooltip": "Количество слотов которое даётся за единицу брони",
+  "commands.inve_tory.already_disabled": "Inve tory уже выключен для %s",
+  "commands.inve_tory.already_enabled": "Inve tory уже включён для %s",
+  "commands.inve_tory.disabled": "Inve tory выключен для %s",
+  "commands.inve_tory.enabled": "Inve tory включён для %s"
 }

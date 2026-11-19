@@ -50,6 +50,9 @@ public record SyncPresetPayload(List<Integer> preset, boolean custom) implements
         Player player = ctx.player();
         List<Integer> oldPreset = player.getData(ITAttachments.SLOTS_PRESET);
         player.setData(ITAttachments.SLOTS_PRESET, preset());
+        if (player.getData(ITAttachments.DISABLED)) {
+            return;
+        }
         Inventory inventory = ctx.player().getInventory();
         int unlocked = Math.min(InveTory.getUnlockedSlots(player), oldPreset.size());
         for (int i = 0; i < unlocked; i++) {

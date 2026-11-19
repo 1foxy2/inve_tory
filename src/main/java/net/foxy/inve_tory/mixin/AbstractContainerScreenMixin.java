@@ -81,7 +81,7 @@ public abstract class AbstractContainerScreenMixin<T extends AbstractContainerMe
             } else {
                 guiGraphics.blitSprite(InveTory.INV_DISABLED_SLOT_LOCATION_SPRITE, instance.x - 1, instance.y - 1, 18, 18);
             }
-            if (InveToryClientConfig.CONFIG.preset.get() == SlotPreset.CUSTOM && isHovering(instance, mX, mY)) {
+            if (InveToryClientConfig.CONFIG.getPreset(minecraft.player) == SlotPreset.CUSTOM && isHovering(instance, mX, mY)) {
                 inve_tory$hoveredDisabledSlot = instance;
             }
         }
@@ -97,7 +97,7 @@ public abstract class AbstractContainerScreenMixin<T extends AbstractContainerMe
         if (this.menu.getCarried().isEmpty() && this.inve_tory$hoveredDisabledSlot != null) {
             Player player = minecraft.player;
             if (player != null) {
-                int slotsAvailable = player.getData(ITAttachments.UNLOCKED_SLOTS) - player.getData(ITAttachments.SLOTS_PRESET.get()).size();
+                int slotsAvailable = player.getData(ITAttachments.UNLOCKED_SLOTS) - ITAttachments.getPreset(player).size();
                 if (slotsAvailable > 0) {
                     guiGraphics.renderTooltip(this.font, List.of(
                             Component.translatable("gui.inve_tory.open_slot"),
@@ -114,7 +114,7 @@ public abstract class AbstractContainerScreenMixin<T extends AbstractContainerMe
     )
     private Slot unlockSlot(AbstractContainerScreen<T> instance, double mouseX, double mouseY, Operation<Slot> original) {
         Slot originalSlot = original.call(instance, mouseX, mouseY);
-        if (originalSlot == null && InveToryClientConfig.CONFIG.preset.get() == SlotPreset.CUSTOM) {
+        if (originalSlot == null && InveToryClientConfig.CONFIG.getPreset(minecraft.player) == SlotPreset.CUSTOM) {
             Slot slot = null;
             for (int i = 0; i < this.menu.slots.size(); i++) {
                 Slot s = this.menu.slots.get(i);
@@ -127,7 +127,7 @@ public abstract class AbstractContainerScreenMixin<T extends AbstractContainerMe
             if (slot != null && slot.container.inve_tory$isDisabled(slot.getSlotIndex()) && minecraft != null) {
                 Player player = minecraft.player;
                 if (player != null) {
-                    int slotsAvailable = player.getData(ITAttachments.UNLOCKED_SLOTS) - player.getData(ITAttachments.SLOTS_PRESET.get()).size();
+                    int slotsAvailable = player.getData(ITAttachments.UNLOCKED_SLOTS) - ITAttachments.getPreset(player).size();
                     if (slotsAvailable > 0) {
                         player.playSound(SoundEvents.UI_BUTTON_CLICK.value(), 0.4F, 1.0f);
                         List<Integer> newList = new ArrayList<>(InveToryClientConfig.CONFIG.custom_preset.get());

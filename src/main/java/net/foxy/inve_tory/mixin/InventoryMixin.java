@@ -23,6 +23,9 @@ public abstract class InventoryMixin implements Container {
 
     @Override
     public boolean inve_tory$isDisabled(int index) {
+        if (player.getData(ITAttachments.DISABLED)) {
+            return false;
+        }
         if (8 < index && index < 36) {
             List<Integer> preset = player.getData(ITAttachments.SLOTS_PRESET);
             int unlocked = Math.min(InveTory.getUnlockedSlots(player), preset.size());

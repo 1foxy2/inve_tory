@@ -1,5 +1,7 @@
 package net.foxy.inve_tory.config;
 
+import net.foxy.inve_tory.base.ITAttachments;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -36,5 +38,12 @@ public class InveToryClientConfig {
                 .comment("if custom preset is selected, this will be the order of slot unlocking")
                 .defineListAllowEmpty("custom_preset", ArrayList::new, () -> 0,
                 o -> o instanceof Integer integer && 8 < integer && integer < 36);
+    }
+
+    public SlotPreset getPreset(Player player) {
+        if (player.getData(ITAttachments.DISABLED)) {
+            return SlotPreset.HORIZONTAL;
+        }
+        return preset.get();
     }
 }

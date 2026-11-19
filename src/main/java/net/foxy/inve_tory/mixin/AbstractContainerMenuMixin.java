@@ -16,12 +16,4 @@ public class AbstractContainerMenuMixin {
     private boolean disableStackableSlot(boolean original, @Local Slot slot) {
         return original && !slot.container.inve_tory$isDisabled(slot.getSlotIndex());
     }
-
-    @ModifyExpressionValue(
-            method = "moveItemStackTo",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;mayPlace(Lnet/minecraft/world/item/ItemStack;)Z", ordinal = 0)
-    )
-    private boolean disableSlot(boolean original, @Local Slot slot) {
-        return original && !slot.container.inve_tory$isDisabled(slot.getSlotIndex());
-    }
 }

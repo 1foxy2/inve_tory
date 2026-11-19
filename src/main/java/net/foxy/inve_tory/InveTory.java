@@ -59,6 +59,9 @@ public class InveTory {
     }
 
     public static int getUnlockedSlots(Player player) {
+        if (player.getData(ITAttachments.DISABLED)) {
+            return 999;
+        }
         return Math.max(player.getData(ITAttachments.UNLOCKED_SLOTS), 0);
     }
 

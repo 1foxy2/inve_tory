@@ -48,7 +48,7 @@ public abstract class InventoryScreenMixin extends EffectRenderingInventoryScree
             )
     )
     private void addSlotResetWidget(CallbackInfo ci) {
-        if (InveToryClientConfig.CONFIG.preset.get() != SlotPreset.CUSTOM || InveToryClientConfig.CONFIG.add_toggle_button.isFalse()) {
+        if (InveToryClientConfig.CONFIG.getPreset(minecraft.player) != SlotPreset.CUSTOM || InveToryClientConfig.CONFIG.add_toggle_button.isFalse()) {
             return;
         }
         addRenderableWidget(new ImageButton(this.leftPos + 148, this.height / 2 - 22, 20, 18, InveToryClient.RESET_BUTTON_SPRITES, button -> {
@@ -75,7 +75,7 @@ public abstract class InventoryScreenMixin extends EffectRenderingInventoryScree
             cancellable = true
     )
     private void disableSlot(Slot slot, int slotId, int mouseButton, ClickType type, CallbackInfo ci) {
-        if (slot != null && InveToryClientConfig.CONFIG.preset.get() == SlotPreset.CUSTOM && inve_tory$isDisablingSlots &&
+        if (slot != null && InveToryClientConfig.CONFIG.getPreset(minecraft.player) == SlotPreset.CUSTOM && inve_tory$isDisablingSlots &&
                 !slot.hasItem() && 8 < slot.getSlotIndex() && slot.getSlotIndex() < 36) {
             Player player = minecraft.player;
             if (player != null) {
@@ -101,7 +101,7 @@ public abstract class InventoryScreenMixin extends EffectRenderingInventoryScree
             )
     )
     private void disableSlotTooltip(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
-        if (InveToryClientConfig.CONFIG.preset.get() == SlotPreset.CUSTOM &&
+        if (InveToryClientConfig.CONFIG.getPreset(minecraft.player) == SlotPreset.CUSTOM &&
                 inve_tory$isDisablingSlots && hoveredSlot != null && !hoveredSlot.hasItem() &&
                 !hoveredSlot.container.inve_tory$isDisabled(hoveredSlot.getSlotIndex()) &&
                 8 < hoveredSlot.getSlotIndex() && hoveredSlot.getSlotIndex() < 36) {

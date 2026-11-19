@@ -5,6 +5,7 @@ import net.foxy.inve_tory.InveTory;
 import net.foxy.inve_tory.config.InveToryConfig;
 import net.foxy.inve_tory.config.SlotPreset;
 import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -23,4 +24,15 @@ public class ITAttachments {
             .register("slots_preset", () -> AttachmentType.builder(() -> InveToryConfig.CONFIG.force_preset_type.get().getServerPreset())
                     .serialize(Codec.INT.listOf()).copyOnDeath()
                     .sync(ByteBufCodecs.INT.apply(ByteBufCodecs.list(100))).build());
+
+    public static final DeferredHolder<AttachmentType<?>, AttachmentType<Boolean>> DISABLED = ATTACHMENTS
+            .register("disabled", () -> AttachmentType.builder(() -> false)
+                    .serialize(Codec.BOOL).copyOnDeath().sync(ByteBufCodecs.BOOL).build());
+
+    public static List<Integer> getPreset(Player player) {
+        if (player.getData(DISABLED)) {
+            return SlotPreset.HORIZONTAL.getServerPreset();
+        }
+        return player.getData(SLOTS_PRESET);
+    }
 }
